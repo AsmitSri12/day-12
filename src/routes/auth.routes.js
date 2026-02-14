@@ -7,7 +7,13 @@ const crypto = require("crypto")
 const userModel = require("../models/user.model")
 
 const authRouter = express.Router()
-
+/*
+* /api/auth/register
+* hashing - one way conversion h from plain text to hashing
+          - isse reverse nhi kiya ja sakta
+          - ek string ka sirf ek hi hashing code hota h 
+  encrytion - it is a two way process/conversion
+*/        
 authRouter.post("/register", async (req, res) => {
     const {name, email, password} = req.body
 
